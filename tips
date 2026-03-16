@@ -1,11 +1,26 @@
-1.创建配置目录，确保文件在这个目录
+一.创建配置目录，确保文件在这个目录
 mkdir -p ~/.openclaw && chmod 777 ~/.openclaw
 
-2.启动服务
+二.启动服务
 docker compose up -d
 
-3.容器内执行，开始初始化
+三.容器内执行，开始初始化
 docker exec -it openclaw node openclaw.mjs onboard
 
-4.浏览器访问
+四.浏览器访问
 http://你的服务器IP:18789?token=你的TOKEN
+
+五.配置企业微信
+1添加智能机器人
+登录企业微信管理后台-安全与管理-管理工具-智能机器人-创建机器人-手动创建-API模式创建(滑到页面最下)-使用长连接-获取Bot ID和Secret
+2.容器下载企业微信插件
+openclaw plugins install @openclaw-china/wecom 
+3.openclaw.json配置企业微信
+"channels": {
+    "wecom": {
+        "enabled": true,
+        "botId": "XXX",
+        "secret": "XXX",
+        "mode": "longpoll"
+      }
+  }
