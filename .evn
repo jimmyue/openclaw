@@ -1,0 +1,2 @@
+# 生成32位随机token
+OPENCLAW_GATEWAY_TOKEN=$(openssl rand -hex 32)
