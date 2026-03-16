@@ -1,0 +1,11 @@
+1.创建配置目录，确保文件在这个目录
+mkdir -p ~/.openclaw && chmod 777 ~/.openclaw
+
+2.启动服务
+docker compose up -d
+
+3.容器内执行，开始初始化
+docker exec -it openclaw node openclaw.mjs onboard
+
+4.浏览器访问
+http://你的服务器IP:18789?token=你的TOKEN
