@@ -24,3 +24,5 @@ openclaw plugins install @openclaw-china/wecom
         "mode": "longpoll"
       }
   }
+4.容器内重启网关
+openclaw gateway restart
